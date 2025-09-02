@@ -3,6 +3,13 @@ import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
+// شعارات الأدوات (PNG)
+import chatgptLogo from '@/assets/icons/chatgpt.png'
+import geminiLogo  from '@/assets/icons/gemini.png'
+import deepseekLogo from '@/assets/icons/deepseek.png'
+import copilotLogo  from '@/assets/icons/copilot.png'
+import Footer from '@/components/Footer.jsx'
+
 import { 
   Brain, 
   BookOpen, 
@@ -46,7 +53,7 @@ function App() {
       id: 'chatgpt',
       name: 'ChatGPT',
       description: 'مساعد ذكي للكتابة والإجابة على الأسئلة',
-      icon: '/src/assets/icons/chatgpt.png',
+      icon: chatgptLogo,
       color: 'bg-green-500',
       uses: ['كتابة المحتوى', 'الترجمة', 'البحث', 'حل المشاكل'],
       access: 'موقع الويب وتطبيق الهاتف',
@@ -57,7 +64,7 @@ function App() {
       id: 'gemini',
       name: 'Google Gemini',
       description: 'مساعد ذكي من Google للمهام المتنوعة',
-      icon: '/src/assets/icons/gemini.png',
+      icon: geminiLogo,
       color: 'bg-blue-500',
       uses: ['البحث الذكي', 'إنشاء المحتوى', 'تحليل البيانات'],
       access: 'موقع الويب وتطبيق الهاتف',
@@ -68,7 +75,7 @@ function App() {
       id: 'deepseek',
       name: 'DeepSeek',
       description: 'منصة ذكاء اصطناعي متقدمة للبرمجة والتحليل',
-      icon: '/src/assets/icons/deepseek.png',
+      icon: deepseekLogo,
       color: 'bg-purple-500',
       uses: ['البرمجة', 'التحليل العلمي', 'حل المسائل المعقدة'],
       access: 'موقع الويب',
@@ -79,7 +86,7 @@ function App() {
       id: 'copilot',
       name: 'Microsoft Copilot',
       description: 'مساعد ذكي مدمج في أدوات Microsoft',
-      icon: '/src/assets/icons/copilot.png',
+      icon: copilotLogo,
       color: 'bg-orange-500',
       uses: ['تحسين الإنتاجية في Office', 'إنشاء العروض التقديمية'],
       access: 'موقع الويب، تطبيقات Office، Windows',
@@ -177,13 +184,9 @@ function App() {
             <Card key={tool.id} className="overflow-hidden">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
-                  <div className={`p-2 ${tool.color} rounded-lg`}>
-                    <img 
-                      src={tool.icon} 
-                      alt={tool.name} 
-                      className="h-10 w-10 object-contain rounded bg-white p-1"
-                    />
-                  </div>
+                 <div className="p-1">
+                <img src={tool.icon} alt={tool.name} className="h-10 w-10 object-contain" loading="lazy" />
+              </div>
                   <div className="flex-1">
                     <CardTitle className="text-lg">{tool.name}</CardTitle>
                     <CardDescription className="text-sm">{tool.description}</CardDescription>
@@ -460,6 +463,7 @@ function App() {
             </TabsContent>
           </Tabs>
         </div>
+        <Footer />
 
         {/* Bottom Navigation */}
         <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-200">
