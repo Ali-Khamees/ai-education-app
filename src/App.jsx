@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.j
 // شعارات الأدوات (PNG)
 import chatgptLogo from '@/assets/icons/chatgpt.png'
 import geminiLogo  from '@/assets/icons/Gemini.png'
-import deepseekLogo from '@/assets/icons/deepseek.png'
+import deepseekLogo from '@/assets/icons/DeepSeek.png'
 import copilotLogo  from '@/assets/icons/copilot.png'
 import Footer from '@/components/Footer.jsx'
 
