@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import './App.css'
+import { registerSW } from 'virtual:pwa-register'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  registerSW({
+  immediate: true,   // يسجّل ويحدّث نفسه تلقائيًا
+})
 )
